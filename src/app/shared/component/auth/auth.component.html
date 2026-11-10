@@ -1,0 +1,147 @@
+<div class="auth-wrapper">
+  <div class="auth-container">
+    <!-- LEFT SIDE -->
+    <div class="auth-left">
+      <div class="brand-logo">F</div>
+
+      <div class="welcome-content">
+        <span class="small-heading">FAIR ACCESS, MADE SIMPLE</span>
+
+        <h1>Your next opportunity starts here.</h1>
+
+        <p>
+          Sign in to continue, or create an account to discover everything
+          waiting for you.
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="auth-right">
+      <div class="form-container">
+        <span class="form-label">GET STARTED</span>
+
+        <h2>
+          {{ isLogin ? "Welcome back" : "Create your account" }}
+        </h2>
+
+        <p class="subtitle">
+          {{
+            isLogin
+              ? "Enter your details to access your account."
+              : "It only takes a moment to get started."
+          }}
+        </p>
+
+        <!-- TABS -->
+        <div class="auth-tabs">
+          <button
+            type="button"
+            [class.active]="!isLogin"
+            (click)="changeMode(false)"
+          >
+            Sign up
+          </button>
+
+          <button
+            type="button"
+            [class.active]="isLogin"
+            (click)="changeMode(true)"
+          >
+            Log in
+          </button>
+        </div>
+
+        <!-- FORM -->
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+          <!-- EMAIL -->
+          <div class="form-group">
+            <label>Email address <span>*</span></label>
+
+            <input
+              type="email"
+              class="form-control"
+              placeholder="you@example.com"
+              formControlName="email"
+            />
+
+            <small
+              class="error"
+              *ngIf="f['email'].touched && f['email'].hasError('required')"
+            >
+              Email is required.
+            </small>
+
+            <small
+              class="error"
+              *ngIf="f['email'].touched && f['email'].hasError('email')"
+            >
+              Please enter a valid email address.
+            </small>
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="form-group">
+            <label>Password <span>*</span></label>
+
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Enter your password"
+              formControlName="password"
+            />
+
+            <small
+              class="error"
+              *ngIf="
+                f['password'].touched && f['password'].hasError('required')
+              "
+            >
+              Password is required.
+            </small>
+
+            <small
+              class="error"
+              *ngIf="
+                f['password'].touched && f['password'].hasError('minlength')
+              "
+            >
+              Minimum 6 characters required.
+            </small>
+          </div>
+
+          <!-- ACCOUNT TYPE -->
+          <div class="form-group" *ngIf="!isLogin">
+            <label>Account type <span>*</span></label>
+
+            <select class="form-control" formControlName="userRole">
+              <option value="admin">Admin</option>
+              <option value="superAdmin">Super Admin</option>
+              <option value="buyer">Buyer</option>
+            </select>
+          </div>
+
+          <!-- SUBMIT -->
+          <button type="submit" class="submit-btn">
+            {{ isLogin ? "Log in" : "Create account" }}
+
+            <span>→</span>
+          </button>
+        </form>
+
+        <!-- FOOTER -->
+        <div class="form-footer">
+          <span *ngIf="!isLogin">
+            Already have an account?
+            <a (click)="changeMode(true)">Log in</a>
+          </span>
+
+          <span *ngIf="isLogin">
+            Don't have an account?
+            <a (click)="changeMode(false)">Sign up</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

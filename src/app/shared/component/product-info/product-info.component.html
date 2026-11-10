@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mt-4">
+      <div class="card shadow">
+        <div class="card-header">
+          <strong>{{ products.brand }}</strong>
+        </div>
+        <img [src]="products.image" />
+
+        <div class="card-body">
+          <p><strong>Title:</strong> : {{ products.title }}</p>
+          <p><strong>Info:</strong> : {{ products.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 mt-4">
+      <div class="card mb-4 shadow">
+        <div class="card-body">
+          <p><strong>Category:</strong> {{ products.category }}</p>
+          <p><strong>Price:</strong> {{ products.price }}</p>
+        </div>
+      </div>
+      <div class="card mb-4 shadow">
+        <div class="card-body">
+          <p><strong>Quantity:</strong> {{ products.quantity }}</p>
+          <p><strong>Rating:</strong> {{ products.rating }}</p>
+          <p><strong>Status:</strong> {{ products.status }}</p>
+        </div>
+      </div>
+      <div class="card mb-4 shadow">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-outline-primary" (click)="editProduct()">Edit</button>
+            <button class="btn btn-outline-danger" (click)="removeProduct(products.id)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

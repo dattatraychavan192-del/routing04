@@ -1,0 +1,275 @@
+
+
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.auth-wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  min-height: 100vh;
+  background: #f1f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+}
+
+.auth-container {
+  width: 50%;
+  max-width: 1120px;
+  min-height: 450px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* LEFT SECTION */
+
+.auth-left {
+  background: linear-gradient(145deg, #205b50, #164c4d);
+  color: #fff;
+  padding: 35px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.welcome-content {
+  margin-bottom: 20px;
+}
+
+.small-heading {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #a6e3d4;
+}
+
+.welcome-content h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 15px 0;
+  max-width: 380px;
+}
+
+.welcome-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #d0e2df;
+  max-width: 350px;
+}
+
+/* RIGHT SECTION */
+
+.auth-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px;
+  background: #fff;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-label {
+  color: #267365;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.form-container h2 {
+  font-size: 27px;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  color: #202b2a;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #858585;
+  margin-bottom: 25px;
+}
+
+/* TABS */
+
+.auth-tabs {
+  display: flex;
+  background: #f2f3f5;
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.auth-tabs button {
+  width: 50%;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-tabs button.active {
+  background: #fff;
+  color: #245f55;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* INPUTS */
+
+.form-group {
+  margin-bottom: 19px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #263332;
+}
+
+.form-group label span {
+  color: #dc3545;
+}
+
+.form-control {
+  height: 43px;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #267365;
+  box-shadow: 0 0 0 2px rgba(38, 115, 101, 0.1);
+}
+
+.form-control::placeholder {
+  color: #a0a0a0;
+  font-size: 12px;
+}
+
+.error {
+  display: block;
+  color: #dc3545;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+/* SUBMIT BUTTON */
+
+.submit-btn {
+  width: 100%;
+  background: #267365;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 13px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #1b584e;
+}
+
+.submit-btn span {
+  margin-left: 5px;
+}
+
+/* FOOTER */
+
+.form-footer {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 12px;
+  color: #858585;
+}
+
+.form-footer a {
+  color: #267365;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .auth-wrapper {
+    padding: 15px;
+  }
+
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-left {
+    min-height: 260px;
+    padding: 25px;
+  }
+
+  .welcome-content h1 {
+    font-size: 27px;
+  }
+
+  .auth-right {
+    padding: 35px 25px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .auth-left {
+    min-height: 230px;
+  }
+
+  .auth-right {
+    padding: 30px 18px;
+  }
+
+  .form-container h2 {
+    font-size: 23px;
+  }
+
+}
+
