@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { ProductService } from '../../service/product.service';
 import { Iproduct } from '../../model/product';
 
@@ -84,6 +84,7 @@ export class ProductFormComponent implements OnInit {
         this.router.navigate(['/product', res.name]);
         const createdProduct: Iproduct = { ...product, id: res.name };
         this.productService.creatObs$.next(createdProduct);
+        this.router.navigate(['/product']);
       },
 
       error: () => {

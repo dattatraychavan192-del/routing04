@@ -37,6 +37,7 @@ export class ProductInfoComponent implements OnInit {
           ...res,
           id: this.productId,
         };
+        this._route.navigate(['product']);
       },
       error: (err) => console.log(err),
     });
